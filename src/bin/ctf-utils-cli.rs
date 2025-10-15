@@ -39,10 +39,9 @@ fn run() -> Result<(), String> {
     }
 
     let position_id = calculate_position_id(collateral, condition_id, outcome_index);
-    let bytes = position_id.to_be_bytes::<32>();
+    let hex = alloy_primitives::hex::encode(position_id.to_be_bytes::<32>());
 
-    io::stdout()
-        .write_all(&bytes)
+    writeln!(io::stdout(), "{hex}")
         .map_err(|err| format!("failed to write result: {err}"))?;
     Ok(())
 }
