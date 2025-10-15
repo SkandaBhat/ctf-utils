@@ -1,8 +1,8 @@
 # ctf-utils
 
-Rust helpers for working with UMA Conditional Token Framework identifiers. The
-crate mirrors the functionality of `github.com/polymarket/go-ctf-utils`, using
-[`alloy-primitives`](https://docs.rs/alloy-primitives/) for Ethereum-native
+Rust helpers for working with UMA Conditional Token Framework identifiers. This
+is a Rust port of [`github.com/polymarket/go-ctf-utils`](https://github.com/polymarket/go-ctf-utils),
+using [`alloy-primitives`](https://docs.rs/alloy-primitives/) for Ethereum-native
 types.
 
 ## Quick Start
@@ -34,18 +34,4 @@ println!("Condition id     : {condition_id}");
 println!("Long token id    : {long_id}");
 println!("Short token id   : {short_id}");
 # Ok::<(), ctf_utils::AncillaryError>(())
-```
-
-## Feature Flags
-
-The crate defaults to `std`. Disable default features for `no_std` ancillary and
-hash helpers. The `position` module (and `calculate_position_id(s)`) requires
-`std` because it uses `num-bigint`.
-
-## Testing
-
-Run the unit tests to confirm parity with the Go helpers:
-
-```bash
-cargo test
 ```
