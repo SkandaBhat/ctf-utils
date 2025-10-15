@@ -23,3 +23,8 @@ num-traits = { version = "0.2", default-features = false }
 
 [dev-dependencies]
 proptest = "1.4"
+
+[[bin]]
+name = "ctf-utils-cli"
+path = "src/bin/ctf-utils-cli.rs"
+required-features = ["std"]

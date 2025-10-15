@@ -35,3 +35,14 @@ println!("Long token id    : {long_id}");
 println!("Short token id   : {short_id}");
 # Ok::<(), ctf_utils::AncillaryError>(())
 ```
+
+## Foundry Fuzz Harness
+
+Forge-based fuzz tests live under `fuzz/`. They compare the on-chain
+implementation (`CTHelpers.sol`) with this crate via Foundry's FFI cheatcode.
+
+1. Build the CLI binary: `cargo build --bin ctf-utils-cli`
+2. Run the tests with FFI enabled: `FOUNDRY_FFI=1 forge test --ffi`
+
+Ensure [`forge`](https://book.getfoundry.sh/getting-started/installation.html) is
+installed and available on your PATH.
