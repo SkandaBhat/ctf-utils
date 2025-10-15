@@ -16,9 +16,9 @@ fn main() {
 fn run() -> Result<(), String> {
     let mut args = env::args().skip(1);
 
-    let collateral_str = args.next().ok_or_else(|| usage())?;
-    let condition_str = args.next().ok_or_else(|| usage())?;
-    let outcome_str = args.next().ok_or_else(|| usage())?;
+    let collateral_str = args.next().ok_or_else(usage)?;
+    let condition_str = args.next().ok_or_else(usage)?;
+    let outcome_str = args.next().ok_or_else(usage)?;
 
     // Ensure there are no extra args.
     if args.next().is_some() {
